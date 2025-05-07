@@ -63,7 +63,42 @@ ninja.data = [{
             },},{id: "news-my-website-is-now-live-have-a-look-around",
           title: 'My website is now live! Have a look around 🪐',
           description: "",
-          section: "News",},{
+          section: "News",},{id: "projects-handcycle-wrist-guard",
+          title: 'handcycle wrist guard',
+          description: "increasing accessability to hand cycleing for those with grip weakness or wrist pain",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/a_wrist_guard_hand_cycle/";
+            },},{id: "projects-the-sous-gardener",
+          title: 'the sous gardener',
+          description: "keep your green babies alive and thriving with almost no effort at all",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/ab_sous_gardener/";
+            },},{id: "projects-the-beer-pour-machine",
+          title: 'the beer pour machine',
+          description: "want the perfect head on your beer but have bad hand eye coordination?",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/beer_pour_machine/";
+            },},{id: "projects-heat-sink-design",
+          title: 'heat sink design',
+          description: "design and modeling of components for dark matter detection experiment",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/crystalize_heatsink/";
+            },},{id: "projects-scintillating-ptfe-material",
+          title: 'scintillating PTFE material',
+          description: "design and fabrication of novel scintillating PTFE material",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/crystalize_ptfe/";
+            },},{id: "projects-dead-reckoning-on-the-össur-power-knee",
+          title: 'dead reckoning on the Össur Power Knee',
+          description: "using pedestrian dead reckoning for task and terrain estimation on the Össur Power Knee",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/dead_reckoning_power_knee/";
+            },},{id: "projects-powered-ankle-prosthesis-on-slopes",
+          title: 'powered ankle prosthesis on slopes',
+          description: "effects of powered ankle prostheses on lower limb kinetics and metabolics literature review",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/sloped_prosth_walking_lit_review/";
+            },},{
         id: 'social-bluesky',
         title: 'Bluesky',
         section: 'Socials',
