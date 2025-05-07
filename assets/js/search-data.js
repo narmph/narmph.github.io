@@ -93,6 +93,11 @@ ninja.data = [{
           description: "using pedestrian dead reckoning for task and terrain estimation on the Össur Power Knee",
           section: "Projects",handler: () => {
               window.location.href = "/projects/dead_reckoning_power_knee/";
+            },},{id: "projects-joint-impedance-estimation",
+          title: 'joint impedance estimation',
+          description: "using machine learning to estimate joint mechanical impedance",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/ml_impedance_estimation/";
             },},{id: "projects-powered-ankle-prosthesis-on-slopes",
           title: 'powered ankle prosthesis on slopes',
           description: "effects of powered ankle prostheses on lower limb kinetics and metabolics literature review",
