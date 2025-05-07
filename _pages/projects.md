@@ -5,7 +5,7 @@ permalink: /projects/
 description: A growing collection of your cool projects.
 nav: false
 nav_order: 3
-display_categories: [research, class]
+display_categories: [research, classes, undergraduate research, undergraduate classes]
 horizontal: false
 ---
 
