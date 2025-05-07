@@ -2,7 +2,7 @@
 layout: page
 title: projects
 permalink: /projects/
-description: A growing collection of your cool projects.
+description: here is inexaustive list of my projects going back to undergrad
 nav: false
 nav_order: 3
 display_categories: [research, classes, undergraduate research, undergraduate classes]
