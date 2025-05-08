@@ -42,8 +42,8 @@ layout: default
           {% if page.watched or page.runtime %}
             &nbsp;&middot;&nbsp;
           {% endif %}
-          {% if page.letterboxd_review %}
-            <a target="_blank" href="https://letterboxd.com/review/{{ page.letterboxd_review }}"><i class="fa-solid fa-film"></i>
+          {% if page.letterboxd_slug %}
+            <a target="_blank" href="https://letterboxd.com/narmph/film/{{ page.letterboxd_slug }}/"><i class="fa-solid fa-film"></i>
           {% endif %}
           {% assign full_stars = page.stars | floor %}
           {% assign half_star = page.stars | minus: full_stars %}
@@ -58,9 +58,17 @@ layout: default
           {%- for i in (1..empty_stars) -%}
             <i class="fa-regular fa-star fa-sm"></i>
           {%- endfor -%}
-          {% if page.letterboxd_review %}
+          {% if page.letterboxd_slug %}
             </a>
           {% endif %}
+        {% endif %}
+        {% if page.letterboxd_slug %}
+          {% if page.watched or page.stars or page.runtime %}
+            &nbsp;&middot;&nbsp;
+          {% endif %}
+          <a target="_blank" href="https://letterboxd.com/narmph/film/{{ page.letterboxd_slug }}/">
+            <i class="fa-solid fa-film"></i> Letterboxd
+          </a>
         {% endif %}
         {% if page.streaming_link %}
           {% if page.watched or page.stars or page.runtime %}
