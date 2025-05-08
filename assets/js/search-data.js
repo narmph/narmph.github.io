@@ -23,14 +23,7 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/resume/";
           },
-        },{id: "dropdown-bookshelf",
-              title: "bookshelf",
-              description: "",
-              section: "Dropdown",
-              handler: () => {
-                window.location.href = "/books/";
-              },
-            },{id: "dropdown-projects",
+        },{id: "dropdown-projects",
               title: "projects",
               description: "",
               section: "Dropdown",
@@ -44,6 +37,13 @@ ninja.data = [{
               handler: () => {
                 window.location.href = "/publications/";
               },
+            },{id: "dropdown-shelf",
+              title: "shelf",
+              description: "",
+              section: "Dropdown",
+              handler: () => {
+                window.location.href = "/shelf/";
+              },
             },{id: "post-my-first-blog-post",
         
           title: "my first blog post",
@@ -55,11 +55,21 @@ ninja.data = [{
             window.location.href = "/blog/2025/first_post/";
           
         },
-      },{id: "books-the-godfather",
-          title: 'The Godfather',
+      },{id: "books-flowers-for-algernon",
+          title: 'Flowers for Algernon',
           description: "",
           section: "Books",handler: () => {
-              window.location.href = "/books/the_godfather/";
+              window.location.href = "/books/flowers_for_algernon/";
+            },},{id: "books-the-dispossessed",
+          title: 'The Dispossessed',
+          description: "",
+          section: "Books",handler: () => {
+              window.location.href = "/books/the_dispossessed/";
+            },},{id: "movies-sinners",
+          title: 'Sinners',
+          description: "",
+          section: "Movies",handler: () => {
+              window.location.href = "/movies/sinners/";
             },},{id: "news-my-website-is-now-live-have-a-look-around",
           title: 'My website is now live! Have a look around 🪐',
           description: "",
