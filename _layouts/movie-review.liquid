@@ -1,0 +1,203 @@
+---
+layout: default
+---
+{% assign year = page.watched | date: '%Y' %}
+{% assign tags = page.tags | join: '' %}
+{% assign categories = page.categories | join: '' %}
+
+{% if page._styles %}
+  <!-- Page/Post style -->
+  <style type="text/css">
+    {{ page._styles }}
+  </style>
+{% endif %}
+
+<div class="post">
+  <header class="post-header">
+    <h1 class="post-title">{{ page.title }}</h1>
+    {% if page.director or page.released %}
+      <p class="post-meta">
+        {% if page.director %}
+          Director: {{ page.director }}
+        {% endif %}
+        {% if page.director and page.released %} &nbsp;&middot;&nbsp; {% endif %}
+        {% if page.released %}
+          Released: {{ page.released }}
+        {% endif %}
+      </p>
+    {% endif %}
+
+    {% if page.watched or page.stars or page.runtime %}
+      <p class="post-meta">
+        {% if page.watched %}
+          <i class="fa-solid fa-eye fa-sm" style="color: var(--global-tip-block) !important"></i> <em>Watched: {{ page.watched }}</em>
+        {% endif %}
+        {% if page.runtime %}
+          {% if page.watched %}
+            &nbsp;&middot;&nbsp;
+          {% endif %}
+          <i class="fa-solid fa-clock fa-sm"></i> <em>{{ page.runtime }} minutes</em>
+        {% endif %}
+        {% if page.stars %}
+          {% if page.watched or page.runtime %}
+            &nbsp;&middot;&nbsp;
+          {% endif %}
+          {% if page.letterboxd_review %}
+            <a target="_blank" href="https://letterboxd.com/review/{{ page.letterboxd_review }}"><i class="fa-solid fa-film"></i>
+          {% endif %}
+          {% assign full_stars = page.stars | floor %}
+          {% assign half_star = page.stars | minus: full_stars %}
+          {% assign empty_stars = 5 | minus: full_stars %}
+          {% if half_star > 0 %}
+            {% assign empty_stars = empty_stars | minus: 1 %}
+          {% endif %}
+          {% for i in (1..full_stars) -%}
+            <i class="fa-solid fa-star fa-sm"></i>
+          {%- endfor -%}
+          {%- if half_star > 0 %}<i class="fa-solid fa-star-half-stroke fa-sm"></i>{% endif -%}
+          {%- for i in (1..empty_stars) -%}
+            <i class="fa-regular fa-star fa-sm"></i>
+          {%- endfor -%}
+          {% if page.letterboxd_review %}
+            </a>
+          {% endif %}
+        {% endif %}
+        {% if page.streaming_link %}
+          {% if page.watched or page.stars or page.runtime %}
+            &nbsp;&middot;&nbsp;
+          {% endif %}
+          <a target="_blank" href="{{ page.streaming_link }}">
+            <i class="fa-solid fa-play"></i>
+            {% if page.streaming_service %}
+              <span>{{ page.streaming_service }}</span>
+            {% endif %}
+          </a>
+        {% endif %}
+      </p>
+    {% endif %}
+    <p class="post-tags">
+      <a href="{{ year | prepend: '/shelf/movies/' | relative_url }}"> <i class="fa-solid fa-calendar fa-sm"></i> {{ year }}</a>
+      {% if tags != '' %}
+        &nbsp;&middot;&nbsp;
+        {% for tag in page.tags %}
+          <a href="{{ tag | slugify | prepend: '/shelf/movies/tag/' | relative_url }}"> <i class="fa-solid fa-hashtag fa-sm"></i> {{ tag }}</a>
+          {% unless forloop.last %}
+            &nbsp;
+          {% endunless %}
+        {% endfor %}
+      {% endif %}
+
+      {% if categories != '' %}
+        &nbsp;&middot;&nbsp;
+        {% for category in page.categories %}
+          <a href="{{ category | slugify | prepend: '/shelf/movies/category/' | relative_url }}"> <i class="fa-solid fa-tag fa-sm"></i> {{ category }}</a>
+          {% unless forloop.last %}
+            &nbsp;
+          {% endunless %}
+        {% endfor %}
+      {% endif %}
+    </p>
+    <hr>
+  </header>
+
+  <article>
+    {% if content == '' %}
+      <figure class="empty-review">
+        {% if page.poster %}
+          <img class="empty-review-poster" alt="{{ page.title }} poster" src="{{ page.poster | relative_url }}">
+          <figcaption class="empty-review-caption">
+            Poster of <em>{{ page.title }}</em>
+          </figcaption>
+        {% endif %}
+      </figure>
+      {% assign status = page.status | upcase %}
+      <div class="clearfix">
+        <h4>{{ status }}</h4>
+      </div>
+    {% else %}
+      <figure>
+        {% if page.poster %}
+          <img alt="{{ page.title }} poster" src="{{ page.poster | relative_url }}">
+          <figcaption>
+            Poster of <em>{{ page.title }}</em>
+          </figcaption>
+        {% endif %}
+      </figure>
+      <br class="mobile-break" clear="right">
+      {{ content }}
+    {% endif %}
+  </article>
+
+  {% if site.giscus and page.giscus_comments %}
+    {% include giscus.liquid %}
+  {% endif %}
+</div>
+
+<style>
+      figure {
+        float: none;
+        width: auto;
+        display: block;
+        margin-right: auto;
+        margin-left: auto;
+      }
+      figure > img {
+           vertical-align: top;
+           display: block;
+           margin-right: 0px;
+           margin-left: 0px;
+           padding: 0px;
+      }
+      figure figcaption {
+        display: block;
+        caption-side: bottom;
+        text-align: center;
+      }
+
+      @media screen and (min-width: 600px)  {
+        .empty-review{
+          float: left;
+          display: block;
+          margin: 0px 0px 0px 0px;
+          padding: 0px 0px 0px 20px;
+        }
+
+        .empty-review-caption {
+          caption-side: left;
+          text-align: left;
+        }
+
+        .empty-review-poster {
+          width: 250px;
+          vertical-align: top;
+          padding-right: 40px;
+        }
+
+        figure {
+          float: right;
+          display: in-line block;
+          margin: 0px 0px 0px 0px;
+          padding: 0px 0px 0px 20px;
+        }
+
+        figure img {
+          width: 300px;
+          vertical-align: top;
+        }
+
+        figure figcaption {
+          caption-side: bottom;
+          text-align: left;
+        }
+
+        .mobile-break { display: none; }
+      }
+
+      blockquote {
+        position: relative;
+        margin: 0px;
+        display: table;
+      }
+</style>
+</document_content>
+</invoke>
