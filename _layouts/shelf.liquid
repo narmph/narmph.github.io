@@ -14,20 +14,79 @@ layout: page
   <h1>Books</h1>
   {% assign books_collection = site.books %}
   {% if books_collection and books_collection.size > 0 %}
-    {% assign books = books_collection | sort: "date" | reverse %}
-    {% for item in books %}
-      {% assign current_year = item.date | date: '%Y' %}
-      {% if current_year != year %}
-        {% unless forloop.first %}
-          </ul>
-        {% endunless %}
-        <h2 id="book-y{{item.date | date: "%Y"}}">
-          <a href="{{ current_year | prepend: '/shelf/books/' | relative_url }}">{{ current_year }}</a>
-        </h2>
-        <ul class="shelf-items">
-          {% assign year = current_year %}
+    {% comment %} First, let's check what date field we're using {% endcomment %}
+    {% for book in books_collection limit:1 %}
+      <!-- Debug: Book has date: {{ book.date }}, started: {{ book.started }}, finished: {{ book.finished }} -->
+    {% endfor %}
+    
+    {% comment %} Create a custom sort key for each book {% endcomment %}
+    {% assign sorted_books = "" | split: "" %}
+    
+    {% for book in books_collection %}
+      {% assign status = book.status | downcase | strip %}
+      
+      {% comment %} Determine the most recent date for this book {% endcomment %}
+      {% assign sort_date = book.date %}
+      {% if book.finished %}
+        {% assign sort_date = book.finished %}
+      {% elsif book.started %}
+        {% assign sort_date = book.started %}
       {% endif %}
-
+      
+      {% comment %} Create a sorting priority {% endcomment %}
+      {% case status %}
+        {% when 'reading' %}
+          {% assign priority = 1 %}
+        {% when 'finished' %}
+          {% assign priority = 2 %}
+        {% when 'queued' %}
+          {% assign priority = 3 %}
+        {% else %}
+          {% assign priority = 4 %}
+      {% endcase %}
+      
+      {% comment %} Create a custom object with sorting info {% endcomment %}
+      {% assign book_data = book | map: "title" | first %}
+      {% assign book_with_sort = book %}
+      {% assign book_with_sort.sort_priority = priority %}
+      {% assign book_with_sort.sort_date = sort_date %}
+      
+      {% assign sorted_books = sorted_books | push: book %}
+    {% endfor %}
+    
+    {% comment %} Group books by status {% endcomment %}
+    {% assign reading_books = "" | split: "" %}
+    {% assign finished_books = "" | split: "" %}
+    {% assign queued_books = "" | split: "" %}
+    {% assign other_books = "" | split: "" %}
+    
+    {% for book in books_collection %}
+      {% assign status = book.status | downcase | strip %}
+      {% case status %}
+        {% when 'reading' %}
+          {% assign reading_books = reading_books | push: book %}
+        {% when 'finished' %}
+          {% assign finished_books = finished_books | push: book %}
+        {% when 'queued' %}
+          {% assign queued_books = queued_books | push: book %}
+        {% else %}
+          {% assign other_books = other_books | push: book %}
+      {% endcase %}
+    {% endfor %}
+    
+    {% comment %} Sort each group by the most relevant date field {% endcomment %}
+    {% assign reading_books = reading_books | sort: "started" | reverse %}
+    {% assign finished_books = finished_books | sort: "finished" | reverse %}
+    {% assign queued_books = queued_books | sort: "date" | reverse %}
+    {% assign other_books = other_books | sort: "date" | reverse %}
+    
+    {% comment %} Concatenate all groups {% endcomment %}
+    {% assign books = reading_books | concat: finished_books | concat: queued_books | concat: other_books %}
+    
+    <!-- Debug: Total books: {{ books.size }}, Reading: {{ reading_books.size }}, Finished: {{ finished_books.size }}, Queued: {{ queued_books.size }}, Other: {{ other_books.size }} -->
+    
+    <ul class="shelf-items">
+    {% for item in books %}
       <figure class="cover">
         <a class="cover-link" href="{{ item.url | relative_url }}">
           {% if item.cover %}
@@ -49,11 +108,10 @@ layout: page
             <figcaption class="uncategorized">UNCATEGORIZED</figcaption>
           {% endif %}
         </a>
+        <!-- Debug: {{ item.title }} - Status: {{ item.status }}, Date: {{ item.date }}, Started: {{ item.started }}, Finished: {{ item.finished }} -->
       </figure>
-      {% if forloop.last %}
-        </ul>
-      {% endif %}
     {% endfor %}
+    </ul>
   {% else %}
     <p>No books found.</p>
   {% endif %}
@@ -64,20 +122,44 @@ layout: page
   <h1>Movies</h1>
   {% assign movies_collection = site.movies %}
   {% if movies_collection and movies_collection.size > 0 %}
-    {% assign movies = movies_collection | sort: "date" | reverse %}
+    {% comment %} First, let's check what date field we're using {% endcomment %}
+    {% for movie in movies_collection limit:1 %}
+      <!-- Debug: Movie has date: {{ movie.date }}, watched: {{ movie.watched }} -->
+    {% endfor %}
+    
+    {% comment %} Group movies by status {% endcomment %}
+    {% assign watching_movies = "" | split: "" %}
+    {% assign finished_movies = "" | split: "" %}
+    {% assign queued_movies = "" | split: "" %}
+    {% assign other_movies = "" | split: "" %}
+    
+    {% for movie in movies_collection %}
+      {% assign status = movie.status | downcase | strip %}
+      {% case status %}
+        {% when 'watching' %}
+          {% assign watching_movies = watching_movies | push: movie %}
+        {% when 'finished' %}
+          {% assign finished_movies = finished_movies | push: movie %}
+        {% when 'queued' %}
+          {% assign queued_movies = queued_movies | push: movie %}
+        {% else %}
+          {% assign other_movies = other_movies | push: movie %}
+      {% endcase %}
+    {% endfor %}
+    
+    {% comment %} Sort each group by the most relevant date field {% endcomment %}
+    {% assign watching_movies = watching_movies | sort: "date" | reverse %}
+    {% assign finished_movies = finished_movies | sort: "watched" | reverse %}
+    {% assign queued_movies = queued_movies | sort: "date" | reverse %}
+    {% assign other_movies = other_movies | sort: "date" | reverse %}
+    
+    {% comment %} Concatenate all groups {% endcomment %}
+    {% assign movies = watching_movies | concat: finished_movies | concat: queued_movies | concat: other_movies %}
+    
+    <!-- Debug: Total movies: {{ movies.size }}, Watching: {{ watching_movies.size }}, Finished: {{ finished_movies.size }}, Queued: {{ queued_movies.size }}, Other: {{ other_movies.size }} -->
+    
+    <ul class="shelf-items">
     {% for item in movies %}
-      {% assign current_year = item.date | date: '%Y' %}
-      {% if current_year != movie_year %}
-        {% unless forloop.first %}
-          </ul>
-        {% endunless %}
-        <h2 id="movie-y{{item.date | date: "%Y"}}">
-          <a href="{{ current_year | prepend: '/shelf/movies/' | relative_url }}">{{ current_year }}</a>
-        </h2>
-        <ul class="shelf-items">
-          {% assign movie_year = current_year %}
-      {% endif %}
-
       <figure class="cover">
         <a class="cover-link" href="{{ item.url | relative_url }}">
           {% if item.poster %}
@@ -95,11 +177,10 @@ layout: page
             <figcaption class="uncategorized">UNCATEGORIZED</figcaption>
           {% endif %}
         </a>
+        <!-- Debug: {{ item.title }} - Status: {{ item.status }}, Date: {{ item.date }}, Watched: {{ item.watched }} -->
       </figure>
-      {% if forloop.last %}
-        </ul>
-      {% endif %}
     {% endfor %}
+    </ul>
   {% else %}
     <p>No movies found.</p>
   {% endif %}

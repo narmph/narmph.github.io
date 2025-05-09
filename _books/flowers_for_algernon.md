@@ -6,7 +6,7 @@ type: book
 cover: "assets/img/book_covers/flowers_for_algernon.jpg"
 olid:  # use Open Library ID to fetch cover (if no `cover` is provided)
 isbn:  # use ISBN to fetch cover (if no `olid` is provided, dashes are optional)
-categories: science-fiction psychology classics
+categories: science-fiction classics
 tags: 
 started: 2024-06-15
 finished: 
