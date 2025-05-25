@@ -11,7 +11,7 @@ status: finished
 streaming_service:
 streaming_link: 
 runtime: 138
-tags: 
+tags: movies
 letterboxd_slug: "sinners-2025"
 categories: [horror, action, thriller]
 poster: "/assets/img/movie_posters/sinners.jpg"

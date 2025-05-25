@@ -6,7 +6,7 @@ layout: page
 <!-- Tab navigation for Books/Movies -->
 <div class="shelf-tabs">
   <button class="shelf-tab active" onclick="showShelf('books-section')">Books</button>
-  <button class="shelf-tab" onclick="showShelf('movies-section')">Movies</button>
+  <button class="shelf-tab" onclick="showShelf('movies-section')">Movies/TV</button>
 </div>
 
 <!-- Books Section -->
@@ -119,7 +119,7 @@ layout: page
 
 <!-- Movies Section -->
 <div id="movies-section" class="shelf-section" style="display: none;">
-  <h1>Movies</h1>
+  <h1>Movies/TV</h1>
   {% assign movies_collection = site.movies %}
   {% if movies_collection and movies_collection.size > 0 %}
     {% comment %} First, let's check what date field we're using {% endcomment %}

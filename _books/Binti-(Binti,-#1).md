@@ -7,7 +7,7 @@ cover:
 olid:  
 isbn: 0765384469
 categories: science-fiction afro-futurism
-tags:  
+tags: novella
 started: 2020-05-07
 finished: 
 released: 2015

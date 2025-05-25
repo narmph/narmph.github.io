@@ -27,10 +27,13 @@ layout: default
       </p>
     {% endif %}
 
-    {% if page.watched or page.stars or page.runtime %}
+    {% if page.watched or page.stars or page.runtime or page.episodes or page.started %}
       <p class="post-meta">
         {% if page.watched %}
           <i class="fa-solid fa-eye fa-sm" style="color: var(--global-tip-block) !important"></i> <em>Watched: {{ page.watched }}</em>
+        {% endif %}
+        {% if page.started %}
+          <i class="fa-solid fa-eye fa-sm" style="color: var(--global-tip-block) !important"></i> <em>Started: {{ page.started }}</em>
         {% endif %}
         {% if page.runtime %}
           {% if page.watched %}
@@ -38,6 +41,13 @@ layout: default
           {% endif %}
           <i class="fa-solid fa-clock fa-sm"></i> <em>{{ page.runtime }} minutes</em>
         {% endif %}
+        {% if page.episodes %}
+          {% if page.watched or page.started %}
+            &nbsp;&middot;&nbsp;
+          {% endif %}
+          <i class="fa-solid fa-tv fa-sm"></i> <em>{{ page.episodes }} episodes</em>
+        {% endif %}
+      
         {% if page.stars %}
           {% if page.watched or page.runtime %}
             &nbsp;&middot;&nbsp;
@@ -71,7 +81,7 @@ layout: default
           </a>
         {% endif %}
         {% if page.streaming_link %}
-          {% if page.watched or page.stars or page.runtime %}
+          {% if page.watched or page.stars or page.runtime or page.started or page.episodes%}
             &nbsp;&middot;&nbsp;
           {% endif %}
           <a target="_blank" href="{{ page.streaming_link }}">
@@ -84,11 +94,11 @@ layout: default
       </p>
     {% endif %}
     <p class="post-tags">
-      <a href="{{ year | prepend: '/shelf/movies/' | relative_url }}"> <i class="fa-solid fa-calendar fa-sm"></i> {{ year }}</a>
+      <a href="{{ year | prepend: '/movies/' | relative_url }}"> <i class="fa-solid fa-calendar fa-sm"></i> {{ year }}</a>
       {% if tags != '' %}
         &nbsp;&middot;&nbsp;
         {% for tag in page.tags %}
-          <a href="{{ tag | slugify | prepend: '/shelf/movies/tag/' | relative_url }}"> <i class="fa-solid fa-hashtag fa-sm"></i> {{ tag }}</a>
+          <a href="{{ tag | slugify | prepend: '/movies/tag/' | relative_url }}"> <i class="fa-solid fa-hashtag fa-sm"></i> {{ tag }}</a>
           {% unless forloop.last %}
             &nbsp;
           {% endunless %}
@@ -98,7 +108,7 @@ layout: default
       {% if categories != '' %}
         &nbsp;&middot;&nbsp;
         {% for category in page.categories %}
-          <a href="{{ category | slugify | prepend: '/shelf/movies/category/' | relative_url }}"> <i class="fa-solid fa-tag fa-sm"></i> {{ category }}</a>
+          <a href="{{ category | slugify | prepend: '/movies/category/' | relative_url }}"> <i class="fa-solid fa-tag fa-sm"></i> {{ category }}</a>
           {% unless forloop.last %}
             &nbsp;
           {% endunless %}
