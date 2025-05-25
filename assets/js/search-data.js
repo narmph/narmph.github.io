@@ -485,6 +485,11 @@ ninja.data = [{
           description: "",
           section: "Books",handler: () => {
               window.location.href = "/books/Yellowface/";
+            },},{id: "books-all-systems-red",
+          title: 'All Systems Red',
+          description: "",
+          section: "Books",handler: () => {
+              window.location.href = "/books/all-systems-red/";
             },},{id: "books-flowers-for-algernon",
           title: 'Flowers for Algernon',
           description: "",
@@ -495,11 +500,21 @@ ninja.data = [{
           description: "",
           section: "Books",handler: () => {
               window.location.href = "/books/the_dispossessed/";
+            },},{id: "movies-murderbot",
+          title: 'Murderbot',
+          description: "",
+          section: "Movies",handler: () => {
+              window.location.href = "/movies/murderbot/";
             },},{id: "movies-sinners",
           title: 'Sinners',
           description: "",
           section: "Movies",handler: () => {
               window.location.href = "/movies/sinners/";
+            },},{id: "movies-thunderbolts",
+          title: 'Thunderbolts*',
+          description: "",
+          section: "Movies",handler: () => {
+              window.location.href = "/movies/thunderbolts/";
             },},{id: "news-my-website-is-now-live-have-a-look-around",
           title: 'My website is now live! Have a look around 🪐',
           description: "",
