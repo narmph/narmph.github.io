@@ -65,6 +65,14 @@
       "position": "Outreach Chair",
       "url": "https://sites.google.com/umich.edu/megc/about/outreach",
       "startDate": "2024-04-01"
+    },
+    {
+      "organization": "CITRIS Invention Lab",
+      "location": "Berkeley, California",
+      "position": "Super User",
+      "url": "https://citris-uc.org/labs-programs/invention-lab-3/",
+      "startDate": "2022-08-15",
+      "endDate": "2023-05-15"
     }
   ],
   "awards": [
@@ -151,6 +159,25 @@
         "Quilting",
         "Swimming"
       ]
+    }
+  ],
+    "other work":[
+    {
+      "name": "Berkeley Student Cooperative",
+      "position": "Kitchen Manager at Kingman Hall",
+      "url": "https://bsc.coop/",
+      "startDate": "2022-01-15",
+      "endDate": "2022-08-15",
+      "summary": "Managed food ordering, kitchen cleanliness, and workshifts for a kitchen serving 50 people.",
+      "highlights": ["ServSafe Certified"]
+    },
+    {
+      "name": "Gabrialla Cafe",
+      "position": "Assistant Pastry Chef",
+      "url": "http://gabriellacafe.com",
+      "startDate": "2018-01-15",
+      "endDate": "2019-01-15",
+      "summary": "Worked under the head pastry chef at Gabriella Cafe, helping with preparing deserts and occasionally doing prep for the other chefs."
     }
   ]
 }

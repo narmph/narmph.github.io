@@ -22,8 +22,19 @@ announcements:
 latest_posts:
   enabled: true
   scrollable: true # adds a vertical scroll bar if there are more than 3 new posts items
-  limit: 3 # leave blank to include all the blog posts
+  limit: 2 # leave blank to include all the blog posts
+
+book_reviews:
+  enabled: true
+  scrollable: true # adds a vertical scroll bar if there are more than 3 new posts items
+  limit: 2 # leave blank to include all the blog posts
+
+movie_reviews:
+  enabled: true
+  scrollable: true # adds a vertical scroll bar if there are more than 3 new posts items
+  limit: 2 # leave blank to include all the blog posts
+
 ---
-I am a 2nd Year PhD Candidate at the Univeristy of Michigan, Ann Arbor. My current research is on estimating dynamic mechanic joint impedance using machine learning. I received a [B.S. in Mechanical Engineering](https://engineering.berkeley.edu/academics/undergraduate-programs/mechanical-engineering/) from the University of California, Berkeley. My PhD here at Michigan will be in [Mechanical Engineering](https://me.engin.umich.edu/academics/graduate/handbook/doctoral/) as well but my M.S. will be in [Movement Science](https://www.kines.umich.edu/academics/movement-science/masters).
+I am a 3rd Year PhD Candidate at the Univeristy of Michigan, Ann Arbor. My current research is on estimating dynamic mechanic joint impedance using machine learning. I received a [B.S. in Mechanical Engineering](https://engineering.berkeley.edu/academics/undergraduate-programs/mechanical-engineering/) from the University of California, Berkeley. My PhD here at Michigan will be in [Mechanical Engineering](https://me.engin.umich.edu/academics/graduate/handbook/doctoral/) as well but my M.S. will be in [Movement Science](https://www.kines.umich.edu/academics/movement-science/masters).
 
 I am a Bay Area native and I love all things science fiction. Any book or movie recommendations are very welcome.

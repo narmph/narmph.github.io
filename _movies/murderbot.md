@@ -5,6 +5,7 @@ director:
 type: movie
 released: 2025
 started: 2025-05-22
+watched: 
 stars: 
 status: watching
 streaming_service: Apple TV

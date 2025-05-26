@@ -29,11 +29,15 @@ layout: default
 
     {% if page.watched or page.stars or page.runtime or page.episodes or page.started %}
       <p class="post-meta">
-        {% if page.watched %}
+        {% if page.watched and page.started == empty%}
           <i class="fa-solid fa-eye fa-sm" style="color: var(--global-tip-block) !important"></i> <em>Watched: {{ page.watched }}</em>
         {% endif %}
         {% if page.started %}
           <i class="fa-solid fa-eye fa-sm" style="color: var(--global-tip-block) !important"></i> <em>Started: {{ page.started }}</em>
+        {% endif %}
+        {% if page.watched and page.started %}
+          &nbsp;&middot;&nbsp;
+          <i class="fa-solid fa-square-check fa-sm" style="color: var(--global-tip-block) !important"></i> <em>Finished: {{ page.watched }}</em>
         {% endif %}
         {% if page.runtime %}
           {% if page.watched %}
