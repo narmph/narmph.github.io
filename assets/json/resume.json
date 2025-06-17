@@ -162,6 +162,14 @@
     }
   ],
     "other work":[
+    {"name": "Doe/Moffit Library Circulation Desk",
+      "position": "Library Student Employee",
+      "url": "https://www.lib.berkeley.edu/visit/doe",
+      "startDate": "2022-08-15",
+      "endDate": "2023-07-15",
+      "summary": "Sorted and shelved returned books, assisted patrons with finding books and using library resources, and checked out books to patrons.",
+      "highlights": ["Shift Manager", "Customer Service", "Library Systems"]
+    },
     {
       "name": "Berkeley Student Cooperative",
       "position": "Kitchen Manager at Kingman Hall",
@@ -177,7 +185,8 @@
       "url": "http://gabriellacafe.com",
       "startDate": "2018-01-15",
       "endDate": "2019-01-15",
-      "summary": "Worked under the head pastry chef at Gabriella Cafe, helping with preparing deserts and occasionally doing prep for the other chefs."
+      "summary": "Worked under the head pastry chef at Gabriella Cafe, helping with preparing deserts and occasionally doing prep for the other chefs.",
+      "highlights": ["Baking", "Food Preparation", "Customer Service"]
     }
   ]
 }
