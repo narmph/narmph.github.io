@@ -45,11 +45,6 @@ scholar_userid: 3hTNmpgAAAAJ # your Google Scholar ID
 # x_username: # your X handle
 # youtube_id: # your youtube channel id (youtube.com/@<youtube_id>)
 # zotero_username: # your zotero username
-letterboxd: # can be any name here other than the ones already defined above
-  logo: assets/img/letterboxd_logo.png # can be png, svg, jpg
-  title: letterboxd # title of the social media
-  url: https://letterboxd.com/narmph/
-goodreads: # can be any name here other than the ones already defined above
-  logo: assets/img/goodreads_logo.png # can be png, svg, jpg
-  title: goodreads # title of the social media
-  url: https://www.goodreads.com/user/show/108893112-nana-porter-honicky
+letterboxd_id: narmph # your letterboxd username (letterboxd.com/<letterboxd_id>)
+goodreads_id: 108893112-nana-porter-honicky # your storygraph username (storygraph.com/<storygraph
+rss_icon: true # set to true to show the RSS icon

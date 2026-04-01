@@ -1,10 +1,10 @@
 ---
 layout: page
 permalink: /publications/
-title: publications and presentations
+title: publications/presentations
 description: all my presentations and things I've published in some way shape or form
-nav: false
-nav_order: 2
+nav: true
+nav_order: 3
 ---
 
 <!-- _pages/publications.md -->

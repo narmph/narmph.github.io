@@ -2,7 +2,8 @@
 layout: shelf
 title: my shelf
 permalink: /shelf/
-nav: false
+nav: true
+nav_order: 6
 collections: shelf
 ---
 

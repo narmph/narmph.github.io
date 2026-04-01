@@ -13,7 +13,7 @@ finished:
 released: 1974
 stars: 
 goodreads_review: 
-status: Reading
+status: Queued
 ---
 
 I started reading this book at the recommendation of a friend who I love and trust the opinions of immensely.

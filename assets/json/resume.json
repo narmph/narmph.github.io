@@ -2,7 +2,8 @@
   "basics": {
     "label": "Graduate Student Researcher",
     "image": "alt_photo.jpg",
-    "email": "narmph@umich.edu"
+    "email": "narmph@umich.edu",
+    "summary": "My research focuses on dynamic impedance estimation in clinical populations and it's implications."
   },
   "education": [
     {
@@ -120,31 +121,11 @@
       "level": "Master",
       "icon": "fa-solid fa-hashtag",
       "keywords": [
-        "Clinical Gait Analysis",
+        "Gait Analysis",
         "Gait Modeling",
         "Impedance Estimation",
-        "IMU Signal Processing"
+        "Signal Processing"
       ]
-    }
-  ],
-  "references": [
-    {
-      "name": "Professor Elliott Rouse",
-      "icon": "fa-solid fa-person-walking",
-      "email": "ejrouse@umich.edu",
-      "position": "Associate Professor of Mechanical Engineering and Robotics at the University of Michigan, Ann Arbor."
-    },
-    {
-      "name": "Professor Hannah Stuart",
-      "icon": "fa-solid fa-gears",
-      "email": "hstuart@berkeley.edu",
-      "position": "Associate Professor of Mechanical Engineering at the University of California, Berkeley."
-    },
-    {
-      "name": "Dr. Peter Sorensen",
-      "icon": "fa-solid fa-atom",
-      "email": "PFSorensen@lbl.gov",
-      "position": "Senior Scientist at Lawrence Berkeley Labs in the Physics Division."
     }
   ],
   "interests": [

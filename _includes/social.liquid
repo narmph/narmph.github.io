@@ -92,6 +92,12 @@
       <a href="https://youtube.com/@{{ social[1] }}" title="YouTube"><i class="fa-brands fa-youtube"></i></a>
     {% when 'zotero_username' %}
       <a href="https://www.zotero.org/{{ social[1] }}" title="Zotero"><i class="ai ai-zotero"></i></a>
+    {% when 'letterboxd_id' %}
+      <a href="https://letterboxd.com/{{ social[1] }}" title="Letterboxd"><i class="fa-brands fa-letterboxd"></i></a>
+    {% when 'storygraph_id' %}
+      <a href="https://app.thestorygraph.com/profile/{{ social[1] }}" title="StoryGraph"><i class="fa-solid fa-book"></i></a>
+    {% when 'goodreads_id' %}
+      <a href="https://www.goodreads.com/user/show/{{ social[1] }}" title="Goodreads"><i class="fa-brands fa-goodreads"></i></a>
     {% else %}
       <a href="{{ social[1].url }}" title="{{ social[1].title }}">
         {% assign file_ext = social[1].logo | split: '.' | last %}

@@ -49,16 +49,16 @@ layout: default
     {% endif %}
 
     <div class="row">
-      <div class="col-sm-6 mt-3 mt-md-0">
-        <!-- News -->
-        {% if page.announcements and page.announcements.enabled %}
-          <h2>
-            <a href="{{ '/news/' | relative_url }}" style="color: inherit">news</a>
-          </h2>
-          {% include news.liquid limit=true %}
-        {% endif %}
-      </div>
-      <div class="col-sm-6 mt-3 mt-md-0">
+      <!-- News -->
+      {% if page.announcements and page.announcements.enabled %}
+        <h2>
+          <a href="{{ '/news/' | relative_url }}" style="color: inherit">news</a>
+        </h2>
+        {% include news.liquid limit=true %}
+      {% endif %}
+    </div>
+    {% comment %} <div class="row">
+      <div class="col-sm-6 mt-2 mt-md-0">
         <!-- Latest posts -->
         {% if page.latest_posts and page.latest_posts.enabled %}
           <h2>
@@ -67,9 +67,7 @@ layout: default
           {% include latest_posts.liquid %}
         {% endif %}
       </div>
-    </div>
-    <div class="row">
-      <div class="col-sm-6 mt-3 mt-md-0">
+      <div class="col-sm-6 mt-2 mt-md-0">
         <!-- Recent book reviews -->
         {% if page.book_reviews and page.book_reviews.enabled %}
           <h2>
@@ -78,8 +76,7 @@ layout: default
           {% include latest_books.liquid %}
         {% endif %}
       </div>
-  
-      <div class="col-sm-6 mt-3 mt-md-0">
+      <div class="col-sm-6 mt-2 mt-md-0">
         <!-- Recent movie reviews -->
         {% if page.movie_reviews and page.movie_reviews.enabled %}
           <h2>
@@ -88,7 +85,7 @@ layout: default
           {% include latest_movies.liquid %}
         {% endif %}
       </div>
-    </div>
+    </div> {% endcomment %}
 
     <!-- Social -->
     {% if page.social %}

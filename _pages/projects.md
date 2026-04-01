@@ -3,8 +3,8 @@ layout: page
 title: projects
 permalink: /projects/
 description: here is inexaustive list of my projects going back to undergrad
-nav: false
-nav_order: 3
+nav: true
+nav_order: 2
 display_categories: [research, classes, undergraduate research, undergraduate classes]
 horizontal: false
 ---
