@@ -9,42 +9,42 @@ ninja.data = [{
     handler: () => {
       window.location.href = "/";
     },
-  },{id: "nav-blog",
+  },{id: "nav-cv",
+          title: "cv",
+          description: "",
+          section: "Navigation",
+          handler: () => {
+            window.location.href = "/cv/";
+          },
+        },{id: "nav-projects",
+          title: "projects",
+          description: "here is inexaustive list of my projects going back to undergrad",
+          section: "Navigation",
+          handler: () => {
+            window.location.href = "/projects/";
+          },
+        },{id: "nav-publications-presentations",
+          title: "publications/presentations",
+          description: "all my presentations and things I&#39;ve published in some way shape or form",
+          section: "Navigation",
+          handler: () => {
+            window.location.href = "/publications/";
+          },
+        },{id: "nav-blog",
           title: "blog",
           description: "",
           section: "Navigation",
           handler: () => {
             window.location.href = "/blog/";
           },
-        },{id: "nav-resume",
-          title: "resume",
+        },{id: "nav-my-shelf",
+          title: "my shelf",
           description: "",
           section: "Navigation",
           handler: () => {
-            window.location.href = "/resume/";
+            window.location.href = "/shelf/";
           },
-        },{id: "dropdown-projects",
-              title: "projects",
-              description: "",
-              section: "Dropdown",
-              handler: () => {
-                window.location.href = "/projects/";
-              },
-            },{id: "dropdown-publications-and-presentations",
-              title: "publications and presentations",
-              description: "",
-              section: "Dropdown",
-              handler: () => {
-                window.location.href = "/publications/";
-              },
-            },{id: "dropdown-shelf",
-              title: "shelf",
-              description: "",
-              section: "Dropdown",
-              handler: () => {
-                window.location.href = "/shelf/";
-              },
-            },{id: "post-my-first-blog-post",
+        },{id: "post-my-first-blog-post",
         
           title: "my first blog post",
         
@@ -190,6 +190,61 @@ ninja.data = [{
           description: "",
           section: "Books",handler: () => {
               window.location.href = "/books/Little-Fires-Everywhere/";
+            },},{id: "books-lore-olympus-vol-1",
+          title: 'Lore Olympus, Vol 1',
+          description: "",
+          section: "Books",handler: () => {
+              window.location.href = "/books/Lore_Olympus_1/";
+            },},{id: "books-lore-olympus-vol-10",
+          title: 'Lore Olympus, Vol 10',
+          description: "",
+          section: "Books",handler: () => {
+              window.location.href = "/books/Lore_Olympus_10/";
+            },},{id: "books-lore-olympus-vol-11",
+          title: 'Lore Olympus, Vol 11',
+          description: "",
+          section: "Books",handler: () => {
+              window.location.href = "/books/Lore_Olympus_11/";
+            },},{id: "books-lore-olympus-vol-2",
+          title: 'Lore Olympus, Vol 2',
+          description: "",
+          section: "Books",handler: () => {
+              window.location.href = "/books/Lore_Olympus_2/";
+            },},{id: "books-lore-olympus-vol-3",
+          title: 'Lore Olympus, Vol 3',
+          description: "",
+          section: "Books",handler: () => {
+              window.location.href = "/books/Lore_Olympus_3/";
+            },},{id: "books-lore-olympus-vol-4",
+          title: 'Lore Olympus, Vol 4',
+          description: "",
+          section: "Books",handler: () => {
+              window.location.href = "/books/Lore_Olympus_4/";
+            },},{id: "books-lore-olympus-vol-5",
+          title: 'Lore Olympus, Vol 5',
+          description: "",
+          section: "Books",handler: () => {
+              window.location.href = "/books/Lore_Olympus_5/";
+            },},{id: "books-lore-olympus-vol-6",
+          title: 'Lore Olympus, Vol 6',
+          description: "",
+          section: "Books",handler: () => {
+              window.location.href = "/books/Lore_Olympus_6/";
+            },},{id: "books-lore-olympus-vol-7",
+          title: 'Lore Olympus, Vol 7',
+          description: "",
+          section: "Books",handler: () => {
+              window.location.href = "/books/Lore_Olympus_7/";
+            },},{id: "books-lore-olympus-vol-8",
+          title: 'Lore Olympus, Vol 8',
+          description: "",
+          section: "Books",handler: () => {
+              window.location.href = "/books/Lore_Olympus_8/";
+            },},{id: "books-lore-olympus-vol-9",
+          title: 'Lore Olympus, Vol 9',
+          description: "",
+          section: "Books",handler: () => {
+              window.location.href = "/books/Lore_Olympus_9/";
             },},{id: "books-low-vol-1",
           title: 'Low, Vol. 1',
           description: "",
@@ -215,11 +270,6 @@ ninja.data = [{
           description: "",
           section: "Books",handler: () => {
               window.location.href = "/books/Redshirts/";
-            },},{id: "books-rosewater",
-          title: 'Rosewater',
-          description: "",
-          section: "Books",handler: () => {
-              window.location.href = "/books/Rosewater-(The-Wormwood-Trilogy,-%231)/";
             },},{id: "books-saga-volume-1",
           title: 'Saga, Volume 1',
           description: "",
@@ -518,6 +568,18 @@ ninja.data = [{
             },},{id: "news-my-website-is-now-live-have-a-look-around",
           title: 'My website is now live! Have a look around 🪐',
           description: "",
+          section: "News",},{id: "news-i-have-advanced-to-candidacy-yay",
+          title: 'I have advanced to candidacy! Yay!',
+          description: "",
+          section: "News",},{id: "news-i-presented-my-late-breaking-poster-forecasting-gait-kinetics-and-kinematics-for-biological-joint-impedance-estimation-using-machine-learning-at-rehabweek",
+          title: 'I presented my late-breaking poster Forecasting Gait Kinetics and Kinematics for Biological Joint...',
+          description: "",
+          section: "News",},{id: "news-i-presented-my-poster-forecasting-gait-kinetics-and-kinematics-for-biological-joint-impedance-estimation-using-machine-learning-at-the-midwest-machine-learning-symposium-where-it-got-a-best-poster-award",
+          title: 'I presented my poster Forecasting Gait Kinetics and Kinematics for Biological Joint Impedance...',
+          description: "",
+          section: "News",},{id: "news-my-department-did-a-little-profile-on-me-take-a-look",
+          title: 'My department did a little profile on me. Take a look!',
+          description: "",
           section: "News",},{id: "projects-handcycle-wrist-guard",
           title: 'handcycle wrist guard',
           description: "increasing accessability to hand cycleing for those with grip weakness or wrist pain",
@@ -601,18 +663,25 @@ ninja.data = [{
           window.open("https://scholar.google.com/citations?user=3hTNmpgAAAAJ", "_blank");
         },
       },{
-        id: 'social-letterboxd',
-        title: 'Letterboxd',
+        id: 'social-letterboxd_id',
+        title: 'Letterboxd_id',
         section: 'Socials',
         handler: () => {
-          window.open("https://letterboxd.com/narmph/", "_blank");
+          window.open("", "_blank");
         },
       },{
-        id: 'social-goodreads',
-        title: 'Goodreads',
+        id: 'social-goodreads_id',
+        title: 'Goodreads_id',
         section: 'Socials',
         handler: () => {
-          window.open("https://www.goodreads.com/user/show/108893112-nana-porter-honicky", "_blank");
+          window.open("", "_blank");
+        },
+      },{
+        id: 'social-rss',
+        title: 'RSS Feed',
+        section: 'Socials',
+        handler: () => {
+          window.open("/feed.xml", "_blank");
         },
       },{
       id: 'light-theme',
