@@ -1,29 +1,33 @@
-{% comment %}
-  Unified interests entry renderer for both formats
-{% endcomment %}
-
-<div class="card-text font-weight-light">
-  {% for entry in entries %}
-    <div class="interest-item">
-      {% if entry.icon %}
-        <i class="{{ entry.icon }}"></i>
-      {% endif %}
-      <strong>{{ entry.name }}:</strong>
-      {% if entry.keywords %}
-        {% for keyword in entry.keywords %}
-          {% if forloop.last %}
-            {{ keyword }}
-          {% else %}
-            {{ keyword }},
-          {% endif %}
-        {% endfor %}
-      {% endif %}
+<div class="list-groups">
+  {% for content in data[1] %}
+    <div class="list-group col-md-6">
+      <table class="table-cv list-group-table">
+        <tbody>
+          <tr>
+            {% if content.icon %}
+              <td class="list-group-category-icon">
+                <i class="{{ content.icon }}"></i>
+              </td>
+            {% else %}
+              <td class="list-group-category-icon"></td>
+            {% endif %}
+            <!-- Calculate colspan number for category title -->
+            {% assign i = 1 %}
+            {% for item in content.items %}
+              {% assign i = i | plus: 1 %}
+            {% endfor %}
+            <td colspan="{{ i }}" class="list-group-category">{{ content.name }}</td>
+          </tr>
+          {% for item in content.keywords %}
+            <tr>
+              <td></td>
+              <td class="list-group-name">
+                <b>{{ item }}</b>
+              </td>
+            </tr>
+          {% endfor %}
+        </tbody>
+      </table>
     </div>
   {% endfor %}
 </div>
-
-<style>
-  .interest-item {
-    padding: 0.5rem 0;
-  }
-</style>
