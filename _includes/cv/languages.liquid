@@ -1,31 +1,28 @@
-<div class="list-groups">
-  {% for content in data[1] %}
-    <div class="list-group col-md-6">
-      <table class="table-cv list-group-table">
-        <tbody>
-          <tr>
-            {% if content.icon %}
-              <td class="list-group-category-icon">
-                <i class="{{ content.icon }}"></i>
-              </td>
-            {% else %}
-              <td class="list-group-category-icon"></td>
-            {% endif %}
-            <!-- Calculate colspan number for category title -->
-            {% assign i = 1 %}
-            {% for item in content.items %}
-              {% assign i = i | plus: 1 %}
-            {% endfor %}
-            <td colspan="{{ i }}" class="list-group-category">{{ content.language }}</td>
-          </tr>
-          <tr>
-            <td></td>
-            <td class="list-group-name">
-              <b>{{ content.fluency }}</b>
-            </td>
-          </tr>
-        </tbody>
-      </table>
+{% comment %}
+  Unified languages entry renderer for both formats
+  - RenderCV uses: name, summary
+  - JSONResume uses: language, fluency
+{% endcomment %}
+
+<div class="card-text font-weight-light">
+  {% for entry in entries %}
+    <div class="language-item">
+      {% if entry.icon %}
+        <i class="{{ entry.icon }}"></i>
+      {% endif %}
+      {% capture lang_name %}
+        {% if entry.name %}{{ entry.name }}{% elsif entry.language %}{{ entry.language }}{% endif %}
+      {% endcapture %}
+      {% capture fluency %}
+        {% if entry.summary %}{{ entry.summary }}{% elsif entry.fluency %}{{ entry.fluency }}{% endif %}
+      {% endcapture %}
+      <strong>{{ lang_name }}:</strong> {{ fluency }}
     </div>
   {% endfor %}
 </div>
+
+<style>
+  .language-item {
+    padding: 0.5rem 0;
+  }
+</style>
