@@ -61,7 +61,7 @@ ADD Gemfile /srv/jekyll
 WORKDIR /srv/jekyll
 
 # install jekyll and dependencies
-RUN gem install --no-document jekyll bundler
+RUN gem install --no-document jekyll bundler stringio
 RUN bundle install --no-cache
 
 EXPOSE 8080
