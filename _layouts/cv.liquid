@@ -92,31 +92,31 @@ layout: default
             <div>
               {% case data[0] %}
                 {% when 'basics' %}
-                  {% include resume/basics.liquid %}
+                  {% include cv/basics.liquid %}
                 {% when 'education' %}
-                  {% include resume/education.liquid %}
+                  {% include cv/education.liquid %}
                 {% when 'work' %}
-                  {% include resume/work.liquid %}
+                  {% include cv/work.liquid %}
                 {% when 'other work' %}
-                  {% include resume/otherwork.liquid %}
+                  {% include cv/otherwork.liquid %}
                 {% when 'volunteer' %}
-                  {% include resume/volunteer.liquid %}
+                  {% include cv/volunteer.liquid %}
                 {% when 'projects' %}
-                  {% include resume/projects.liquid %}
+                  {% include cv/projects.liquid %}
                 {% when 'awards' %}
-                  {% include resume/awards.liquid %}
+                  {% include cv/awards.liquid %}
                 {% when 'skills' %}
-                  {% include resume/skills.liquid %}
+                  {% include cv/skills.liquid %}
                 {% when 'publications' %}
-                  {% include resume/publications.liquid %}
+                  {% include cv/publications.liquid %}
                 {% when 'languages' %}
-                  {% include resume/languages.liquid %}
+                  {% include cv/languages.liquid %}
                 {% when 'interests' %}
-                  {% include resume/interests.liquid %}
+                  {% include cv/interests.liquid %}
                 {% when 'certificates' %}
-                  {% include resume/certificates.liquid %}
+                  {% include cv/certificates.liquid %}
                 {% when 'references' %}
-                  {% include resume/references.liquid %}
+                  {% include cv/references.liquid %}
                 {% else %}
 
               {% endcase %}
