@@ -44,7 +44,18 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/shelf/";
           },
-        },{id: "post-my-first-blog-post",
+        },{id: "post-ontology-science-and-statistics",
+        
+          title: "Ontology, Science, and Statistics",
+        
+        description: "All models are wrong",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2026/ontology/";
+          
+        },
+      },{id: "post-my-first-blog-post",
         
           title: "my first blog post",
         
@@ -579,6 +590,12 @@ ninja.data = [{
           description: "",
           section: "News",},{id: "news-my-department-did-a-little-profile-on-me-take-a-look",
           title: 'My department did a little profile on me. Take a look!',
+          description: "",
+          section: "News",},{id: "news-my-paper-was-accepted-to-biorob-2026-see-you-in-edmonton",
+          title: 'My paper was accepted to BioRob 2026. See you in Edmonton!',
+          description: "",
+          section: "News",},{id: "news-ontology-science-and-statistics",
+          title: 'Ontology, Science, and Statistics',
           description: "",
           section: "News",},{id: "projects-handcycle-wrist-guard",
           title: 'handcycle wrist guard',
