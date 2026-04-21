@@ -8,7 +8,7 @@ img: /assets/img/projects/beer_pour_machine/cad.png
 
 <div class='row'>
     <div class="col-sm-8 mt-3 mt-md-0">
-        <h3>quick release handcycle grip</h3>
+        <h3>a robot to pour you the perfect beer</h3>
         <p><strong>class:</strong> <a href="https://edg.berkeley.edu/course/me102b/">Mechatronics Design</a><br>
         <strong>term:</strong> fall 2022 <br>
         <strong>write up: </strong><a href="{{ '/assets/pdf/ME102B_Final_Report.pdf' | relative_url }}" class="mybtn btn-sm z-depth-0" role="button">PDF</a></p>

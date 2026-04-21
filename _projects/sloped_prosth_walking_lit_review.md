@@ -1,6 +1,6 @@
 ---
 layout: page
-title: powered ankle prosthesis on slopes
+title: powered ankle prostheses on slopes
 description: effects of powered ankle prostheses on lower limb kinetics and metabolics literature review
 category: classes
 img: /assets/img/projects/sloped_powered_lit_review/flowchart.png
