@@ -622,6 +622,11 @@ ninja.data = [{
           description: "design and fabrication of novel scintillating PTFE material",
           section: "Projects",handler: () => {
               window.location.href = "/projects/crystalize_ptfe/";
+            },},{id: "projects-cyclostride",
+          title: 'CycloStride',
+          description: "design and development of a prosthetic knee optimized for level and ramp walking",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/cyclostride/";
             },},{id: "projects-dead-reckoning-on-the-össur-power-knee",
           title: 'dead reckoning on the Össur Power Knee',
           description: "using pedestrian dead reckoning for task and terrain estimation on the Össur Power Knee",
@@ -632,8 +637,8 @@ ninja.data = [{
           description: "using machine learning to estimate joint mechanical impedance",
           section: "Projects",handler: () => {
               window.location.href = "/projects/ml_impedance_estimation/";
-            },},{id: "projects-powered-ankle-prosthesis-on-slopes",
-          title: 'powered ankle prosthesis on slopes',
+            },},{id: "projects-powered-ankle-prostheses-on-slopes",
+          title: 'powered ankle prostheses on slopes',
           description: "effects of powered ankle prostheses on lower limb kinetics and metabolics literature review",
           section: "Projects",handler: () => {
               window.location.href = "/projects/sloped_prosth_walking_lit_review/";
