@@ -35,6 +35,6 @@ movie_reviews:
   limit: 2 # leave blank to include all the blog posts
 
 ---
-I am a 3rd Year PhD Candidate at the Univeristy of Michigan, Ann Arbor. My current research is on estimating dynamic mechanic joint impedance using machine learning. I received a [B.S. in Mechanical Engineering](https://engineering.berkeley.edu/academics/undergraduate-programs/mechanical-engineering/) from the University of California, Berkeley. My PhD here at Michigan will be in [Mechanical Engineering](https://me.engin.umich.edu/academics/graduate/handbook/doctoral/) as well but my M.S. will be in [Movement Science](https://www.kines.umich.edu/academics/movement-science/masters).
+I am a 4th Year PhD Candidate at the Univeristy of Michigan, Ann Arbor. My research focuses on estimating the impedance of human joints and its implications in clinical populations. I received a [B.S. in Mechanical Engineering](https://engineering.berkeley.edu/academics/undergraduate-programs/mechanical-engineering/) from the University of California, Berkeley were I spent two years doing instrumentation for [a dark matter detector](https://sites.google.com/lbl.gov/peter-sorensen/home). My PhD here at Michigan will be in [Mechanical Engineering](https://me.engin.umich.edu/academics/graduate/handbook/doctoral/) but my masters will be in [Movement Science](https://www.kines.umich.edu/academics/movement-science/masters) through the School of Kinesiology.
 
 I am a Bay Area native and I love all things science fiction. Any book or movie recommendations are very welcome.
